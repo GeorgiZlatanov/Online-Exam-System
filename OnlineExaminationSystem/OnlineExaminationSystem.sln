@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31019.35
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineExamination.DataAccess", "OnlineExamination.DataAccess\OnlineExamination.DataAccess.csproj", "{F658918B-CDCD-4700-8A04-D9989067AA26}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F658918B-CDCD-4700-8A04-D9989067AA26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F658918B-CDCD-4700-8A04-D9989067AA26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F658918B-CDCD-4700-8A04-D9989067AA26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F658918B-CDCD-4700-8A04-D9989067AA26}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {05649D04-C268-4DB2-8956-96F385059C72}
+	EndGlobalSection
+EndGlobal
