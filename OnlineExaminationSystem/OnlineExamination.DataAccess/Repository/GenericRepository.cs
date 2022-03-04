@@ -36,7 +36,7 @@ namespace OnlineExamination.DataAccess.Repository
             if (_context.Entry(entityToDelete).State == EntityState.Detached)
             {
                 dbSet.Attach(entityToDelete);
-            }
+        }
             dbSet.Remove(entityToDelete);
         }
 
