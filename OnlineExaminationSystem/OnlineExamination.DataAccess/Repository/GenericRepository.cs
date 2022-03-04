@@ -14,10 +14,10 @@ namespace OnlineExamination.DataAccess.Repository
         internal DbSet<T> dbSet;
         private readonly ApplicationDbContext _context = null;
 
-        public GenericRepository(DbSet<T> dbSet, ApplicationDbContext context)
+        public GenericRepository(ApplicationDbContext context)
         {
-            this.dbSet = dbSet;
             _context = context;
+            this.dbSet = _context.Set<T>();         
         }
 
         public void Add(T entity)
