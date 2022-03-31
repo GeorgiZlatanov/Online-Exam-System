@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace OnlineExamination.ViewModels
 {
-    public class LoginViewLogin
+    public class LoginViewModel
     {
         public int Id { get; set; }
         public string Name { get; set; }
