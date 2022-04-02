@@ -22,7 +22,7 @@ namespace OnlineExamination.BLL.Services
         {
             try
             {
-                Students ogj = vm.ConvertViewModel(vm);
+                Students obj = vm.ConvertViewModel(vm);
                 await _unitOfWork.GenericRepository<Students>().AddAsync(obj);
             }
             catch (Exception ex)
@@ -91,7 +91,7 @@ namespace OnlineExamination.BLL.Services
                         TotalQuestion = examResults.Count(a => a.StudentsId == studentId
                           && a.ExamsId == exj.ex.Id),
                         CorrectAnswer = examResults.Count(a => a.StudentsId == studentId &&
-a.ExamsId == exj.ex.Id && a.Answer == q.Answer),
+                         a.ExamsId == exj.ex.Id && a.Answer == q.Answer),
                         WrongAnswer = examResults.Count(a => a.StudentsId == studentId &&
                          a.ExamsId == exj.ex.Id && a.Answer != q.Answer)
 
@@ -101,7 +101,6 @@ a.ExamsId == exj.ex.Id && a.Answer == q.Answer),
             catch (Exception ex)
             {
                 _iLogger.LogError(ex.Message);
-
             }
             return Enumerable.Empty<ResultViewModel>();
         }
@@ -194,5 +193,3 @@ a.ExamsId == exj.ex.Id && a.Answer == q.Answer),
 
     }
 }
-
-
