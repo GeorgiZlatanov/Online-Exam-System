@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\OnlineExamination.DataAccess\OnlineExamination.DataAccess.csproj" />
     <ProjectReference Include="..\OnlineExamination.ViewModels\OnlineExamination.ViewModels.csproj" />
   </ItemGroup>
 
