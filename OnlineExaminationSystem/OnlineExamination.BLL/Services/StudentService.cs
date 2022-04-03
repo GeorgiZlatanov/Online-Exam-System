@@ -42,7 +42,9 @@ namespace OnlineExamination.BLL.Services
             {
                 int ExcludeRecords = (pageSize * pageNumber) - pageSize;
                 List<StudentViewModel> detailList = new List<StudentViewModel>();
+
                 var modelList = _unitOfWork.GenericRepository<Students>().GetAll().Skip(ExcludeRecords).Take(pageSize).ToList();
+
                 var totalCount = _unitOfWork.GenericRepository<Students>().GetAll().ToList();
                 detailList = GroupListInfo(modelList);
                 if (detailList != null)
@@ -100,7 +102,6 @@ namespace OnlineExamination.BLL.Services
             catch (Exception ex)
             { 
                 _iLogger.LogError(ex.Message);
-
             }
             return Enumerable.Empty<ResultViewModel>();
         }
@@ -130,6 +131,7 @@ namespace OnlineExamination.BLL.Services
                     examResults.StudentsId = vm.StudentId;
                     examResults.QnAsId = item.Id;
                     examResults.ExamsId = item.ExamsId;
+
                     _unitOfWork.GenericRepository<ExamResults>().AddAsync(examResults);
                 }
                 _unitOfWork.Save();
@@ -148,7 +150,9 @@ namespace OnlineExamination.BLL.Services
             {
                 foreach (var item in vm.StudentCheckList)
                 {
+
                     var student = _unitOfWork.GenericRepository<Students>().GetByID(item.Id);
+
                     if (item.Selected)
                     {
                         student.GroupsId = vm.Id;
@@ -201,5 +205,3 @@ namespace OnlineExamination.BLL.Services
         }
     }
 }
-
-
