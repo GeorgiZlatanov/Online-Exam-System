@@ -1,11 +1,16 @@
 ﻿using OnlineExamination.DataAccess;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace OnlineExamination.ViewModels
 {
     public class UserViewModel
     {
+        public UserViewModel()
+        {
+
+        }
         public UserViewModel(Users model)
         {
             Id = model.Id;
@@ -36,5 +41,7 @@ namespace OnlineExamination.ViewModels
         [Required]
         public string Password { get; set; }
         public int Role { get; set; }
+        public List<UserViewModel> UserList{ get; set; }
+        public int TotalCount { get; set; }
     }
 }

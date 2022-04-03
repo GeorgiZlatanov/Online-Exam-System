@@ -29,7 +29,12 @@ namespace OnlineExamination.ViewModels
             UsersId = model.UsersId;
         }
 
-        public Groups ConvertViewModel(GroupViewModel vm)
+
+        public GroupViewModel()
+        {
+        }
+
+        public Groups ConvertGroupsViewModel(GroupViewModel vm)
         {
             return new Groups
             {
