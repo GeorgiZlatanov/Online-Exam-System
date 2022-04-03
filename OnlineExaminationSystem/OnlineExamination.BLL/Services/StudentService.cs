@@ -196,12 +196,41 @@ namespace OnlineExamination.BLL.Services
 
         public IEnumerable<Students> GetAllStudents()
         {
-            throw new NotImplementedException();
+            try
+            {
+                var students = _unitOfWork.GenericRepository<Students>().GetAll();
+                return students;
+            }
+            catch (Exception ex)
+            {
+
+                _iLogger.LogError(ex.Message);
+            }
+            return Enumerable.Empty<Students>();
         }
 
-        public Task<StudentViewModel> UpdateAsync(StudentViewModel vm)
+        public async Task<StudentViewModel> UpdateAsync(StudentViewModel vm)
         {
-            throw new NotImplementedException();
+            try
+            {
+                Students obj = _unitOfWork.GenericRepository<Students>().GetByID(vm.Id);
+                obj.Name = vm.Name;
+                obj.UserName = vm.UserName;
+                obj.PictureFileName = vm.PictureFileName != null ?
+                    vm.PictureFileName : obj.PictureFileName;
+                obj.CVFileName = vm.CVFileName != null ?
+                    vm.CVFileName : obj.CVFileName;
+                obj.Contact = vm.Contact;
+                await _unitOfWork.GenericRepository<Students>().UpdateAsync(obj);
+                _unitOfWork.Save();
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+            return vm;
         }
     }
+    
 }
