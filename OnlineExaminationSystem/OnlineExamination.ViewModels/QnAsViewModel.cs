@@ -34,7 +34,10 @@ namespace OnlineExamination.ViewModels
         public IEnumerable<Exams> ExamsList { get; set; }
         public int TotalCount { get; set; }
         public int SelectedAnswer { get; set; }
-        
+        public QnAsViewModel()
+        {
+
+        }
 
         public QnAsViewModel(QnAs model)
         {
