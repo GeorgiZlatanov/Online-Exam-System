@@ -13,7 +13,7 @@ namespace OnlineExamination.Web.Controllers
         private readonly IGroupService _groupService;
         private readonly IStudentService _studentService;
 
-        public GroupsController(IGroupService groupService, IStudentSevice studentService)
+        public GroupsController(IGroupService groupService, IStudentService studentService)
         {
             _groupService = groupService;
             _studentService = studentService;

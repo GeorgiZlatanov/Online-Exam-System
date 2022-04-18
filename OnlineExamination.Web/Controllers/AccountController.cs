@@ -48,8 +48,7 @@ namespace OnlineExamination.Web.Controllers
                     return RedirectUser(loginVM);
                 }
             }
-            else
-                return View(loginViewModel); 
+            return View(loginViewModel); 
 
         }
         public IActionResult RedirectUser(LoginViewModel loginViewModel)

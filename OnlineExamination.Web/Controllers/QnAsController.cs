@@ -8,9 +8,9 @@ namespace OnlineExamination.Web.Controllers
     public class QnAsController : Controller
     {
         private readonly IExamService _examService;
-        private readonly IQnAService _qnAService;
+        private readonly IQaAService _qnAService;
 
-        public QnAsController(IExamService examService, IQnAService qnAService)
+        public QnAsController(IExamService examService, IQaAService qnAService)
         {
             _examService = examService;
             _qnAService = qnAService;
@@ -18,13 +18,13 @@ namespace OnlineExamination.Web.Controllers
 
         public IActionResult Index(int pageNumber = 1, int pageSize = 10)
         {
-            return View(_qnAService.GetAll(pageNumber, pageSize));
+            return View(_qnAService.GetAll(pageSize, pageNumber));
         }
 
         public IActionResult Create()
         {
             var model = new QnAsViewModel();
-            model.Examlist _examService.GetAllExams();
+            model.ExamsList = _examService.GetAllExams();
             return View(model);
         }
         [HttpPost]
